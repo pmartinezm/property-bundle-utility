@@ -1,8 +1,11 @@
 package controller.comandos;
 
+import view.UIController;
+
 public abstract class ComandoAcciones implements Comando {
 	protected String nombre;
 	protected String descripcion;
+	protected UIController controller;
 
 	public ComandoAcciones() {
 

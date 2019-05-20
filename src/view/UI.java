@@ -9,13 +9,10 @@ import javax.swing.JLabel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.JTextPane;
-import javax.swing.JList;
-import javax.swing.ListSelectionModel;
 import javax.swing.JComboBox;
+import java.awt.TextArea;
 
 public class UI extends JFrame {
 
@@ -27,6 +24,8 @@ public class UI extends JFrame {
 	protected JLabel lblNombreAccion;
 	protected JComboBox combo;
 	protected JButton btnEjecutar;
+	protected TextArea txtBase;
+	protected TextArea txtIncompleto;
 
 	public UI() {
 		try {
@@ -52,9 +51,9 @@ public class UI extends JFrame {
 
 		lblEstado = new JLabel("Esperando ficheros");
 
-		JTextPane textPane = new JTextPane();
+		txtBase = new TextArea();
 
-		JTextPane textPane_1 = new JTextPane();
+		txtIncompleto = new TextArea();
 
 		JLabel lblBase = new JLabel("BASE");
 
@@ -84,13 +83,13 @@ public class UI extends JFrame {
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(lblElFicheroBase, GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(textPane, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-								.addComponent(lblBase, Alignment.LEADING))
-							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblBase)
+								.addComponent(txtBase, GroupLayout.PREFERRED_SIZE, 317, Short.MAX_VALUE))
+							.addGap(18)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblIncompleto)
-								.addComponent(textPane_1, GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)))
+								.addComponent(txtIncompleto, GroupLayout.PREFERRED_SIZE, 329, Short.MAX_VALUE)))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
 								.addComponent(btnEjecutar, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -123,9 +122,9 @@ public class UI extends JFrame {
 						.addComponent(lblIncompleto)
 						.addComponent(lblBase))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(textPane_1, GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-						.addComponent(textPane, GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE))
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(txtIncompleto, GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+						.addComponent(txtBase, GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		getContentPane().setLayout(groupLayout);
