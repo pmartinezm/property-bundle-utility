@@ -3,6 +3,7 @@ package view;
 import javax.swing.DefaultComboBoxModel;
 import controller.comandos.ComandoAcciones;
 import controller.comandos.ComandoDiferencias;
+import controller.comandos.ComandoIgualar;
 import view.actions.LoadFile;
 import view.actions.SelectAction;
 
@@ -17,6 +18,7 @@ public class UIController extends UI {
 	private void addActions() {
 		DefaultComboBoxModel<ComandoAcciones> model = new DefaultComboBoxModel<>();
 		model.addElement(new ComandoDiferencias());
+		model.addElement(new ComandoIgualar());
 		this.combo.setModel(model);
 		this.combo.setSelectedIndex(0);
 	}
