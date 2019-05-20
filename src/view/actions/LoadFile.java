@@ -21,11 +21,12 @@ public class LoadFile implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		FileDialog fd = new FileDialog(this.controller, this.titulo, FileDialog.LOAD);
 		fd.setVisible(true);
-		String path = fd.getDirectory();
+		String path = fd.getDirectory()  + fd.getFile();
+		System.out.println(path);
 
 		File file = new File(path);
-		
+
 		System.out.println(file.exists());
-		this.controller.setEstado(file.exists() ? "Ok" : "Error con el fichero");
+		this.controller.setEstado(file.exists() && !file.isDirectory() ? "Ok" : "Error con el fichero");
 	}
 }
