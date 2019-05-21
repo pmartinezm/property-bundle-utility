@@ -8,7 +8,7 @@ import javax.swing.JComboBox;
 import controller.comandos.ComandoAcciones;
 import view.UIController;
 
-public class ExecuteAction implements ActionListener{
+public class ExecuteAction implements ActionListener {
 	private UIController controller;
 	private JComboBox<ComandoAcciones> combo;
 
@@ -19,6 +19,11 @@ public class ExecuteAction implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		((ComandoAcciones)this.combo.getSelectedItem()).exec();
+		try {
+			((ComandoAcciones) this.combo.getSelectedItem()).exec();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 }

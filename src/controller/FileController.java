@@ -29,7 +29,7 @@ public class FileController {
 		return this.basePath;
 	}
 
-	public String incompletePath() {
+	public String getIncomplete() {
 		return this.incompletePath;
 	}
 

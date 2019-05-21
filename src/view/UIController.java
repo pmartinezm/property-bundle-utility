@@ -6,6 +6,7 @@ import controller.FileController;
 import controller.comandos.ComandoAcciones;
 import controller.comandos.ComandoDiferencias;
 import controller.comandos.ComandoIgualar;
+import controller.comandos.ComandoRepeticiones;
 import controller.comandos.ComandoTest;
 import view.actions.ExecuteAction;
 import view.actions.LoadFile;
@@ -23,6 +24,7 @@ public class UIController extends UI {
 		DefaultComboBoxModel<ComandoAcciones> model = new DefaultComboBoxModel<>();
 		model.addElement(new ComandoDiferencias());
 		model.addElement(new ComandoIgualar());
+		model.addElement(new ComandoRepeticiones(this));
 		model.addElement(new ComandoTest(this));
 		this.combo.setModel(model);
 		this.combo.setSelectedIndex(0);
