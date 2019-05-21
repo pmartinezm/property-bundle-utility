@@ -128,7 +128,7 @@ public class ComandoIgualarSinClave extends ComandoAcciones {
 					}
 
 					if (!existe) {
-						outputWriter.write(line);
+						outputWriter.write(line + "\n");
 						outputWriter.flush();
 						System.out.println(
 								"Linea main: " + contadorLineaPrincipal + " no se han encontrado coincidencias en ES");
